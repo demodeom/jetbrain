@@ -51,7 +51,8 @@ def match_idea_code(html_resource):
 def generate_index_md(ideas_list, download_href):
     h1 = '# JetBrain All Code'
 
-    intr = "以上资源来自网络收集， 如有侵权请联系 demodeom@outlook.com 删除"
+    intr = "以上资源来自网络收集， 如有侵权请联系 demodeom@outlook.com 删除\n\n"
+    package_str = "激活补丁存放在 **dist/** 目录下\n\n"
 
     code_s = '```'
     code_e = '```'
@@ -59,11 +60,12 @@ def generate_index_md(ideas_list, download_href):
     with open('./readme.md', mode='w', encoding='utf-8') as f:
         f.write(h1 + '\n\n')
 
-        f.write(intr + '\n\n')
+        f.write(intr)
+        f.write(package_str)
 
-        f.write(" jetbra.zip 下载地址：" + '\n\n')
+        f.write(" 最新激活补丁压缩包：" + '\n\n')
         f.write(code_s + '\n')
-        f.write(download_href + '\n')
+        f.write(download_href.split("/")[-1] + '\n')
         f.write(code_e + '\n\n')
 
         for idea in ideas_list:

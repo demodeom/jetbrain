@@ -2,10 +2,12 @@
 
 以上资源来自网络收集， 如有侵权请联系 demodeom@outlook.com 删除
 
- jetbra.zip 下载地址：
+激活补丁存放在 **dist/** 目录下
+
+ 激活软件压缩包：
 
 ```
-https://bafybeih65no5dklpqfe346wyeiak6wzemv5d7z2ya7nssdgwdz4xrmdu6i.ipfs.dweb.link/files/jetbra-8f6785eac5e6e7e8b20e6174dd28bb19d8da7550.zip
+jetbra-8f6785eac5e6e7e8b20e6174dd28bb19d8da7550.zip
 ```
 
 ## IntelliJ IDEA  2024.1.x
