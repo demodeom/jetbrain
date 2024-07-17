@@ -1,3 +1,4 @@
+import os.path
 from urllib.parse import urljoin
 
 import requests
@@ -73,11 +74,21 @@ def generate_index_md(ideas_list, download_href):
             f.write(idea['code'] + '\n')
             f.write(code_e + '\n\n')
 
+def dwonload_zip(download_href):
+    file_name = "./dist/" + download_href.split("/")[-1]
+    if os.path.exists(file_name) is False:
+        f = open(file_name, "wb")
+        res = requests.get(download_href)
+        f.write(res.content)
+        f.close()
 
 if __name__ == '__main__':
-    url = "https://hardbin.com/ipfs/bafybeia4nrbuvpfd6k7lkorzgjw3t6totaoko7gmvq5pyuhl2eloxnfiri/"
+    # url = "https://hardbin.com/ipfs/bafybeia4nrbuvpfd6k7lkorzgjw3t6totaoko7gmvq5pyuhl2eloxnfiri/"
+    url = "https://bafybeih65no5dklpqfe346wyeiak6wzemv5d7z2ya7nssdgwdz4xrmdu6i.ipfs.dweb.link/"
     res_text = download_page(url)
     code_dict = match_idea_code(res_text)
     ideas_list = parse_ideas(res_text, code_dict)
     download_href = parse_download_href(res_text, url)
     generate_index_md(ideas_list, download_href)
+    dwonload_zip(download_href)
+
