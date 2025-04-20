@@ -10,6 +10,35 @@
 jetbra-8f6785eac5e6e7e8b20e6174dd28bb19d8da7550.zip
 ```
 
+ Linux 快速激活命令， 推荐使用 ToolBoxApp 安装软件
+
+```bash
+# IntelliJ IDEA
+echo "-javaagent:$HOME/DevTools/jetbra/ja-netfilter.jar=jetbrains" >> ~/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED" >> ~/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED" >> ~/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea64.vmoptions
+
+# WebStorm
+echo "-javaagent:$HOME/DevTools/jetbra/ja-netfilter.jar=jetbrains" >> ~/.local/share/JetBrains/Toolbox/apps/webstorm/bin/webstorm64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED" >> ~/.local/share/JetBrains/Toolbox/apps/webstorm/bin/webstorm64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED" >> ~/.local/share/JetBrains/Toolbox/apps/webstorm/bin/webstorm64.vmoptions
+
+# PHP Storm
+echo "-javaagent:$HOME/DevTools/jetbra/ja-netfilter.jar=jetbrains" >> ~/.local/share/JetBrains/Toolbox/apps/phpstorm/bin/phpstorm64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED" >> ~/.local/share/JetBrains/Toolbox/apps/phpstorm/bin/phpstorm64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED" >> ~/.local/share/JetBrains/Toolbox/apps/phpstorm/bin/phpstorm64.vmoptions
+
+# CLion
+echo "-javaagent:$HOME/DevTools/jetbra/ja-netfilter.jar=jetbrains" >> ~/.local/share/JetBrains/Toolbox/apps/clion/bin/clion64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED" >> ~/.local/share/JetBrains/Toolbox/apps/clion/bin/clion64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED" >> ~/.local/share/JetBrains/Toolbox/apps/clion/bin/clion64.vmoptions
+
+# PyCharm
+echo "-javaagent:$HOME/DevTools/jetbra/ja-netfilter.jar=jetbrains" >>  ~/.local/share/JetBrains/Toolbox/apps/pycharm/bin/pycharm64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED" >>  ~/.local/share/JetBrains/Toolbox/apps/pycharm/bin/pycharm64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED" >>  ~/.local/share/JetBrains/Toolbox/apps/pycharm/bin/pycharm64.vmoptions
+
+```
 ## IntelliJ IDEA  2024.1.x
 
 ```

@@ -7,6 +7,7 @@ import re
 import json
 
 
+
 def download_page(url):
     res = requests.get(url)
     return res.text
@@ -57,6 +58,17 @@ def generate_index_md(ideas_list, download_href):
     code_s = '```'
     code_e = '```'
 
+    command_1 = '-javaagent:$HOME/DevTools/jetbra/ja-netfilter.jar=jetbrains'
+    command_2 = '--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED'
+    command_3 = '--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED'
+
+
+    idea_path = "~/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea64.vmoptions"
+    web_storm_path = "~/.local/share/JetBrains/Toolbox/apps/webstorm/bin/webstorm64.vmoptions"
+    php_storm_path = "~/.local/share/JetBrains/Toolbox/apps/phpstorm/bin/phpstorm64.vmoptions"
+    clion_path = "~/.local/share/JetBrains/Toolbox/apps/clion/bin/clion64.vmoptions"
+    pycharm_path = " ~/.local/share/JetBrains/Toolbox/apps/pycharm/bin/pycharm64.vmoptions"
+
     with open('./readme.md', mode='w', encoding='utf-8') as f:
         f.write(h1 + '\n\n')
 
@@ -67,6 +79,44 @@ def generate_index_md(ideas_list, download_href):
         f.write(code_s + '\n')
         f.write(download_href.split("/")[-1] + '\n')
         f.write(code_e + '\n\n')
+
+        f.write(" Linux 快速激活命令， 推荐使用 ToolBoxApp 安装软件" + '\n\n')
+
+        f.write(f"{code_s}bash" + '\n')
+
+        f.write("# IntelliJ IDEA" + '\n')
+        f.write(f'echo "{command_1}" >> {idea_path}\n')
+        f.write(f'echo "{command_2}" >> {idea_path}\n')
+        f.write(f'echo "{command_3}" >> {idea_path}\n')
+        f.write('\n')
+
+
+        f.write("# WebStorm" + '\n')
+        f.write(f'echo "{command_1}" >> {web_storm_path}\n')
+        f.write(f'echo "{command_2}" >> {web_storm_path}\n')
+        f.write(f'echo "{command_3}" >> {web_storm_path}\n')
+        f.write('\n')
+
+        f.write("# PHP Storm" + '\n')
+        f.write(f'echo "{command_1}" >> {php_storm_path}\n')
+        f.write(f'echo "{command_2}" >> {php_storm_path}\n')
+        f.write(f'echo "{command_3}" >> {php_storm_path}\n')
+        f.write('\n')
+
+        f.write("# CLion" + '\n')
+        f.write(f'echo "{command_1}" >> {clion_path}\n')
+        f.write(f'echo "{command_2}" >> {clion_path}\n')
+        f.write(f'echo "{command_3}" >> {clion_path}\n')
+        f.write('\n')
+
+        f.write("# PyCharm" + '\n')
+        f.write(f'echo "{command_1}" >> {pycharm_path}\n')
+        f.write(f'echo "{command_2}" >> {pycharm_path}\n')
+        f.write(f'echo "{command_3}" >> {pycharm_path}\n')
+        f.write('\n')
+
+        f.write(code_e + '\n')
+
 
         for idea in ideas_list:
             h2 = "## " + idea['name'] + '  ' + idea['version']
