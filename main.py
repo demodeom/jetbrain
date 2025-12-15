@@ -136,8 +136,11 @@ def dwonload_zip(download_href):
 
 if __name__ == '__main__':
     # url = "https://hardbin.com/ipfs/bafybeia4nrbuvpfd6k7lkorzgjw3t6totaoko7gmvq5pyuhl2eloxnfiri/"
-    url = "https://bafybeih65no5dklpqfe346wyeiak6wzemv5d7z2ya7nssdgwdz4xrmdu6i.ipfs.dweb.link/"
-    res_text = download_page(url)
+    # url = "https://bafybeih65no5dklpqfe346wyeiak6wzemv5d7z2ya7nssdgwdz4xrmdu6i.ipfs.dweb.link/"
+    url = "https://3.jetbra.in/"
+    # res_text = download_page(url)
+    with open('./html/index.html', mode='r', encoding='utf-8') as f:
+        res_text = f.read()
     code_dict = match_idea_code(res_text)
     ideas_list = parse_ideas(res_text, code_dict)
     download_href = parse_download_href(res_text, url)
