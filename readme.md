@@ -10,6 +10,15 @@
 jetbra-5a50fc03d68a014f893b7fc3aa465380d59f9095.zip
 ```
 
+```bash
+# 使用 curl
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/demodeom/jetbrain/main/install.sh)"
+
+# 使用 wget
+bash -c "$(wget -qO- https://raw.githubusercontent.com/demodeom/jetbrain/main/install.sh)"
+```
+
+
  Linux 快速激活命令， 推荐使用 ToolBoxApp 安装软件
 
 ```bash
