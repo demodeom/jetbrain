@@ -1,0 +1,9 @@
+[project]
+name = "jetbrain"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "html5lib>=1.1",
+    "requests>=2.33.1",
+]
